@@ -65,7 +65,6 @@
 <body>
   <header>
     <h1>VALORANT フルパ平均ランク計算</h1>
-    <p>5つのボックスでランクを選択 → 平均ランクを算出（Unrated/Unrankedは除外）／チームはローカル保存</p>
   </header>
 
   <main>
@@ -74,7 +73,7 @@
       <ol>
         <li>下の平均ランクで、5つの枠から各メンバーのランクを選んでください。</li>
         <li>5つの枠すべて選ぶと自動で平均ランクが表示されます。計算方式はnearest（四捨五入）/ floor（切り捨て）で切替可能。</li>
-        （Unrated/Unrankedは計算から除外されます。）</li>
+        </li>（Unrated/Unrankedは計算から除外されます。）</li>
         <li>右側の保存でチーム名を付けて保存／読み込み／削除ができます。同名は上書き確認のうえ更新されます。</li>
       </ol>
     </section>
@@ -103,14 +102,14 @@
       </div>
     </section>
     <section id="sec-save-wrap" aria-labelledby="sec-save">
-      <h2 id="sec-save">保存（ローカル）</h2>
+      <h2 id="sec-save">保存</h2>
       <label for="team-name">チーム名</label>
       <input id="team-name" type="text" placeholder="例: 週末フルパA" />
       <div class="controls">
         <button id="save-team" type="button">保存</button>
         <button id="delete-all" class="danger" type="button">すべて削除</button>
       </div>
-      <p><small class="helper">保存先: この端末のブラウザ</small></p>
+      <p><small class="helper">保存先 : この端末のブラウザ</small></p>
       <h3 style="margin:12px 0 6px;font-size:14px">保存済みチーム</h3>
       <ul id="team-list" class="list" aria-live="polite" aria-label="保存済みチーム一覧"></ul>
     </section>
@@ -289,3 +288,4 @@
   </script>
 </body>
 </html>
+
