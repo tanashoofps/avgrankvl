@@ -84,7 +84,7 @@
       <div class="controls">
         <div>
           <label for="rounding">計算方式</label>
-          <select id="rounding" aria-label="丸め方式">
+          <select id="rounding" aria-label="計算方式">
             <option value="nearest" selected>nearest（四捨五入）</option>
             <option value="floor">floor（切り捨て）</option>
           </select>
@@ -98,7 +98,7 @@
 
       <p id="progress"><small class="helper">未選択: 5 / 5</small></p>
       <div class="result" id="result" role="status" aria-live="polite">
-        平均ランク: —（5人すべて選択してください）
+        平均ランク : —（5人すべて選択してください）
       </div>
     </section>
     <section id="sec-save-wrap" aria-labelledby="sec-save">
@@ -218,20 +218,20 @@
 
     function updateProgress(){
       const missing = selects.filter(s=>!s.value).length;
-      progress.innerHTML = `<small class="helper">未選択: ${missing} / 5</small>`;
+      progress.innerHTML = `<small class="helper">未選択 : ${missing} / 5</small>`;
     }
 
     function computeIfReady(){
       const ords = selects.map(s => s.value ? Number(s.value) : null);
       if(ords.some(v => v === null)){
-        resultBox.textContent = '平均ランク: —（5人すべて選択してください）';
+        resultBox.textContent = '平均ランク : —（5人すべて選択してください）';
         resultBox.style.borderColor = '#2b3246';
         return;
       }
       const { avgLabel } = getAvgFromOrdinals(ords, roundingSel.value);
       const tierName = (avgLabel === 'Radiant') ? 'Radiant' : avgLabel.split(' ')[0];
       const color = COLOR[tierName] || 'var(--text)';
-      resultBox.innerHTML = `平均ランク: <strong style="color:${color}">${avgLabel}</strong><br/><small class="helper">選択: ${ords.map(o=>RANK_LABELS[o-1]).join(' / ')}</small>`;
+      resultBox.innerHTML = `平均ランク : <strong style="color:${color}">${avgLabel}</strong><br/><small class="helper">選択 : ${ords.map(o=>RANK_LABELS[o-1]).join(' / ')}</small>`;
       resultBox.style.borderColor = color;
     }
 
@@ -288,4 +288,5 @@
   </script>
 </body>
 </html>
+
 
